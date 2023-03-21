@@ -27,18 +27,7 @@ jobs:
                
     - name: Test Execution
       run: mvn -B -X clean test --file pom.xml
-      
-    - name: Execution result
-      id: ex_res
-      run: |
-        if test -f "target/surefire-reports/TestSuite.txt"; then
-            echo "TestSuite.txt exists."
-            echo "::set-output name=result_message::$(grep "Tests run:" target/surefire-reports/TestSuite.txt)"
-             
-        else 
-            echo "TestSuite.txt not found"
-        fi
-            
+                 
     - name: Attach TestSuite
       uses: actions/upload-artifact@v2
       with:
