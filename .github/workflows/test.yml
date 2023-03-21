@@ -26,7 +26,7 @@ jobs:
         cache: maven
         
     - name: Test Execution
-      run: mvn clean test --file pom.xml
+      run: mvn -X clean test --file pom.xml
       
     - name: Execution result
       id: ex_res
