@@ -20,6 +20,7 @@ public class ImdbHomePageSteps {
 	public static void selectMovie() {
 		ImdbHomePage imdbHomePage = new ImdbHomePage();
 		Waits.waitForElementVisibility(imdbHomePage.movieOptions, 30);
+		Waits.gerericWait(1000);
 		imdbHomePage.firstMovieOption.click();
 		Waits.waitForElementVisibility(imdbHomePage.releaseDate, 30);
 	}

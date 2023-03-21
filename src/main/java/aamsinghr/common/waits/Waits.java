@@ -9,11 +9,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import aamsinghr.common.driver.WebDriverSession;
 
 public class Waits {
-	
+
 	public static void waitForElementVisibility(WebElement element, int seconds) {
-        
-        WebDriverWait wait = new WebDriverWait(WebDriverSession.getWebDriverSession(), Duration.ofSeconds(seconds));
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
+
+		WebDriverWait wait = new WebDriverWait(WebDriverSession.getWebDriverSession(), Duration.ofSeconds(seconds));
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public static void gerericWait(int milliSeconds) {
+
+		try {
+			Thread.sleep(milliSeconds);
+		} catch (InterruptedException e) {
+		}
+	}
 
 }

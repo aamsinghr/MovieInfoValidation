@@ -20,6 +20,7 @@ public class WikiHomePageSteps {
 	public static void selectMovie() {
 		WikiHomePage wikiHomePage = new WikiHomePage();
 		Waits.waitForElementVisibility(wikiHomePage.movieOptions, 30);
+		Waits.gerericWait(1000);
 		wikiHomePage.firstMovieOption.click();
 		Waits.waitForElementVisibility(wikiHomePage.releaseDate, 30);
 	}
